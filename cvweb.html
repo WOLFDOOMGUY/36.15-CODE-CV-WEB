@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>36.15 CV WEB</title>
+    <link rel="icon" type="image/png" href="Logopage.png">
+
+
+
+    <!--BARRE BLANCHE DU HAUT-->
+ <div class="header">
+    <img src="Horloge.gif" alt="Logo Horloge" class="Logo-horloge">
+ <div class="Horloge-text">
+    <span>30/09/2024 au 20/10/2024 - 24/02/2025 au 16/03/2025</span>
+ <div class="Horloge-text2">
+    <span>Première Date</span>
+ <div class="Horloge-text3">
+    <span>Deuxième Date</span>
+    <a href="https://lp-pierre-joseph-fontaine-anzin.59.ac-lille.fr/" target="_blank">
+    <img src="Logolycee.png" alt="Logo Lycee"class="Logo-lycee" title="Lycée Professionnel Pierre-Joseph Fontaine"></a>
+    <img src="Logo3615cv.png" alt="Logo 3615 CV" class="Logo-3615cv" title="Logo">
+
+
+
+    <!--INFORMATION DE HAUT DE PAGE-->
+    <img src="./cvweb/Pointpix.png" alt="Point Pix" class="Point-pix" title="Mes Points Pix">
+    <video id="video" src="./cvweb/Facepicture.mp4" muted width="400px" height="369px" class="Video-picture"></video>
+ <div class="Presentation-text">
+    <span>MOREAU Joffrey 17 Ans</span>
+ <div class="Presentation-text2">
+    <span>TSN (Terminal Système Numérique)</span>
+
+
+
+    <!--BOUTONS PLAY-STOP ET REPLAY-->
+ <div class="button-container2">
+          
+    <!--BOUTON PLAY-->
+    <button class="round-button2 play-stop">
+    <img src="Logoplay.png" alt="Logo Play"></button>
+    <script>
+     document.querySelector('.round-button2.replay').addEventListener('click', function() {
+     const img = this.querySelector('img');
+     img.classList.add('rotate');
+     img.addEventListener('animationend', function() {
+     img.classList.remove('rotate');
+     }, { once: true });
+     });
+
+     document.querySelector('.round-button2.play-stop').addEventListener('click', function() {
+     const img = this.querySelector('img');
+     if (img.src.includes('Logoplay.png')) {
+     img.src = 'Logostop.png';} else {
+     img.src = 'Logoplay.png';}});</script>
+
+    <audio id="audio" src="testaudio.mp3"></audio>
+    <script>
+     document.addEventListener('DOMContentLoaded', (event) => {
+     const video = document.getElementById('video');
+     const audio = document.getElementById('audio');
+     let isCursorOverVideo = false;
+     const playStopButton = document.querySelector('.round-button2.play-stop');
+     const playStopImg = playStopButton.querySelector('img');
+     video.addEventListener('mouseover', () => {
+     isCursorOverVideo = true;
+     
+     video.play();});
+     video.addEventListener('mouseout', () => {
+     isCursorOverVideo = false;
+     
+     video.pause();});
+     video.addEventListener('ended', () => {
+     if (isCursorOverVideo) {
+     
+     video.currentTime = 0;
+     video.play();}});
+
+     playStopButton.addEventListener('click', function() {
+     if (playStopImg.src.includes('Logoplay.png')) {
+     playStopImg.src = 'Logostop.png';
+     audio.play();
+     } else {
+     playStopImg.src = 'Logoplay.png';
+     audio.pause();}});
+
+     audio.addEventListener('play', () => {
+     playStopImg.src = 'Logostop.png';});
+
+     audio.addEventListener('pause', () => {
+     playStopImg.src = 'Logoplay.png';});
+     document.querySelector('.round-button2.replay').addEventListener('click', function() {
+     const img = this.querySelector('img');
+     img.classList.add('rotate');
+     img.addEventListener('animationend', function() {
+     img.classList.remove('rotate');
+     }, { once: true });
+
+     //L'AUDIO SE RELANCE
+     audio.currentTime = 0;
+     audio.play();});});</script>
+
+    <!--BOUTON REPLAY-->
+    <button class="round-button2 replay">
+    <img src="Logoreplay.png" alt="Logo Replay"></button>
+    <script>
+     document.querySelector('.round-button2.replay').addEventListener('click', function() {
+     const img = this.querySelector('img');
+     img.classList.add('rotate');
+     img.addEventListener('animationend', function() {
+     img.classList.remove('rotate');
+     }, { once: true });});</script>
+
+
+
+    <!--BARRES BLANCHE DE COTE-->
+ <div class="right">
+ <div class="left">
+    <div class="bas">
+   
+
+
+
+ <!--GROS BOUTONS-->
+    <div class="button-container">
+<!--BOUTON DU TELEPHONE-->
+        <div class="phone-container">
+            <button class="round-button phone">
+            <img src="Logotelephone.png" alt="Logo Téléphone" title="Coordonnées Téléphoniques"></button>
+        <div class="square-shape">
+            <div class="phone-number">
+             Numéro de Téléphone : 06 49 18 18 23
+            <button class="copy-button" onclick="copyPhoneNumber()">
+                        <img src="Logocopier.png" alt="Copier"></button></div>
+                <div class="action-buttons">
+                    <button class="action-button" onclick="callPhoneNumber()">
+                        <img src="Logotelephone.png" alt="Icon Téléphone">
+                        Appeler</button>
+                    <button class="action-button" onclick="sendMessage()">
+                        <img src="Logomessage.png" alt="Icon Message">
+                        Envoyer un Message</button></div>
+                <div class="note">
+                    PS : Afin que je ne vous rate pas, merci de me contacter de préférence par Message.</div></div></div>
+        
+        <!--BOUTON DU MAIL-->
+        <div class="mail-container">
+            <button class="round-button mail">
+                <img src="Logomailblanc.png" alt="Logo Mail" title="Coordonnées Électroniques"></button>
+            <div class="mail-shape">
+                <div class="phone-number">
+                    Email : moreaujoffrey@outlook.fr
+                    <button class="copy-button" onclick="copyMail()">
+                        <img src="Logocopier.png" alt="Copier"></button></div>
+                <button class="action-button" onclick="sendMail()">
+                    <img src="Logomail.png" alt="Icon Mail">
+                    Envoyer un Mail</button></div></div>
+
+<!--BOUTON DE MA POSITION-->
+        <div class="position-container">
+        <button class="round-button position">
+            <img src="Logoadresse.png" alt="Logo Adresse" title="Coordonnées Postales"></button>
+            <div class="position-shape">
+                <div class="position-text">
+                    Addresse : 34 Rue du Gras Boeuf - Condé-Sur-L'Escaut - 59163
+                    <button class="copy-button" onclick="copyPosition()">
+                        <img src="Logocopier.png" alt="Copier"></button></div>
+                <a href="https://www.condesurlescaut.fr/" target="_blank">
+                    <img src="Logoconde.png" alt="Logo Ville" class="logo-ville" title="Condé-Sur-L'Escaut"></a>
+                    <a href="https://www.google.fr/maps/place/34+Rue+Gras-B%C5%93uf,+59163+Cond%C3%A9-sur-l'Escaut/@50.4628299,3.5974447,17z/data=!3m1!4b1!4m6!3m5!1s0x47c2fa9caf5762f7:0xdce2fe6c628274ee!8m2!3d50.4628299!4d3.6000196!16s%2Fg%2F11c18p4g1r?entry=ttu" target="_blank">
+                        <img src="Logogooglemap.png" alt="Logo Googel Map" class="logo-map" title="Google Maps"></a></div></div>
+            
+<!--BOUTON DE LA POSITION DE MON ECOLE-->
+                <div class="ecole-container">
+        <button class="round-button ecole">
+            <img src="Logoecole.png" alt="Logo École" title="Coordonnées Scolaires"></button>
+            <div class="ecole-shape">
+                <div class="ecole-text">
+                    Addresse : 2 Avenue Léo Lagrange - Anzin - 59410
+                    <button class="copy-button" onclick="copyEcole()">
+                        <img src="Logocopier.png" alt="Copier"></button></div>
+                <a href="https://lp-pierre-joseph-fontaine-anzin.59.ac-lille.fr/" target="_blank">
+                    <img src="Logolycee.png" alt="Logo Lycee" class="Logo-lycee2" title="Lycée Professionnel Pierre-Joseph Fontaine"></a>
+                    <a href="https://www.anzin.fr/" target="_blank">
+                        <img src="LogoAnzin.png" alt="Logo Anzin" class="Logo-lycee-ville" title="Anzin"></a>
+                    <a href="https://www.google.fr/maps/place/2+Av.+L%C3%A9o+Lagrange,+59410+Anzin/@50.368924,3.4868093,16z/data=!3m1!4b1!4m6!3m5!1s0x47c2ec255828c49f:0xf6631852debda35b!8m2!3d50.3689241!4d3.4916802!16s%2Fg%2F11cph22gxz?entry=ttu" target="_blank">
+                        <img src="Logogooglemap.png" alt="Logo Googel Map" class="logo-map2" title="Google Maps"></a></div></div>
+
+            <!--BOUTON LINKEDIN-->
+        <a href="https://www.linkedin.com/in/joffrey-moreau-620330315/" target="_blank" rel="noopener noreferrer">
+            <button class="round-button linkedin">
+                <img src="Logolinkedinpoint.png" alt="Logo LinkedIn Point" title="Profil LinkedIn">
+                <img src="Logolinkedinsanspoint.png" alt="Logo LinkedIn Sans Point"></button></a></div>
+
+
+
+<!--MON CV-->
+<a href="CV.png" download="CV.png">
+<img src="Logocv.png" alt="Logo CV" class="button-image" title="Curriculum Vitae" width="120px" height="150px"></a>
+<div class="rouquine">
+<img src="Logohtml.png" alt="Logo HTML" class="logohtml" title="HTML">
+<img src="Logocss.png" alt="Logo CSS" class="logocss" title="CSS">
+<img src="Logojs.png" alt="Logo JavaScript" class="logojavas" title="JAVA SCRIPT">
+<img src="Logophp.png" alt="Logo PHP" class="logophp" title="PHP">
+<img src="Drapeaufrancais.png" alt="Drapeau de la France" class="Drapeau-fr" title="Drapeau Français"></div>
+
+
+<!--BOUTON MENU-->
+<div class="boutonmenu1">
+<button class="boutonmenu" id="boutonCompetence" onclick="toggleForme('competence-shape', this)">Compétence</button></div>
+<div class="boutonmenu2">
+<button class="boutonmenu" id="boutonEtudes" onclick="toggleForme('etude-shape', this)">Etudes</button></div>
+<div class="boutonmenu3">
+<button class="boutonmenu" id="boutonDiplome" onclick="toggleForme('diplome-shape', this)">Diplôme</button></div>
+<div class="boutonmenu4">
+<button class="boutonmenu" id="boutonStage" onclick="toggleForme('stage-shape', this)">Stage</button></div>
+
+
+
+
+<!--BOUTON COMPETENCE-->
+<div class="forme" id="competence-shape">
+<img src="Drapeaufrancais.png" alt="Drapeau Français" class="Drapeau-france" title="Langue Française">
+<img src="Français.png" alt="Français" class="france-competence" title="Langue Français">
+<img src="Drapeauanglais.png" alt="Drapeau Anglais" class="Drapeau-an" title="Langue Anglaise">
+<img src="Anglais.png" alt="Anglais" class="anglais-competence" title="Langue Anglaise">
+<img src="Programmation.png" alt="Programmation" class="program-dev" title="Développement / Programmation">
+<img src="Developpment.png" alt="Programmation" class="dev-competence" title="Développement / Programmation">
+<img src="Anim.png" alt="Animation" class="animation" title="Animation 2D/3D">
+<img src="Animation.png" alt="Animation" class="anim-competence" title="Animation 2D/3D">
+<img src="Modelisation3d.png" alt="Modelisation" class="modelisation" title="Modélisation 2D/3D">
+<img src="Modelisation.png" alt="Modelisation" class="modelisation-competence" title="Modélisation 2D/3D">
+<img src="Photo.png" alt="Montage Photo" class="photomontage" title="Montage Photo">
+<img src="Montage.png" alt="Montage Photo" class="photomontage-competence" title="Montage Photo">
+<img src="Video.png" alt="Montage Vidéo" class="videomontage" title="Montage Vidéo">
+<img src="Montage.png" alt="Montage Vidéo" class="videomontage-competence" title="Montage Vidéo">
+<img src="Audio.png" alt="Montage Audio" class="audiomontage" title="Montage Audio">
+<img src="Montage.png" alt="Montage Audio" class="audiomontage-competence" title="Montage Audio"></div>
+
+
+
+    <!--BOUTON ETUDE-->
+<div class="forme2" id="etude-shape">
+<div class="carre">
+<p>Collège</p></div>
+<div class="carre2">
+<div class="text">
+<p>Collèges Josquin Des Près :</p></div>
+<div class="text2">
+<p>6émeC</p></div>
+<div class="text3">
+<p>5émeC</p></div>
+<div class="text4">
+<p>4émeC</p></div>
+<div class="text5">
+<p>3émeC</p></div>
+<a href="https://college-josquin-des-pres-conde-sur-lescaut.59.ac-lille.fr/">
+<img src="Logojosquin.png" alt="Josquin" class="logo-josquin" title="Collège Josquin Des Près"></a>
+<a href="https://www.condesurlescaut.fr/">
+<img src="Logoconde.png" alt="Conde" class="logo-conde" title="Condé-Sur-L'Escaut"></a></div>
+
+<div class="carre3">
+<p>Lycée</p></div>
+<div class="carre4">
+<div class="text">
+<p>Lycée Professionnel Pierre Joseph Fontaine :</p></div>
+<div class="text6">
+<p>2TNE (Seconde Professionnel Transition Numérique & Énergétioque)</p></div>
+<div class="text7">
+<p>1SN (Première Professionnel Système Numérique)</p></div>
+<div class="text8">
+<p>TSN (Tremière Professionnel Système Numérique)</p></div>
+<a href="https://www.anzin.fr/">
+<img src="LogoAnzin.png" alt="Anzin" class="logo-anzin" title="Anzin"></a>
+<a href="https://lp-pierre-joseph-fontaine-anzin.59.ac-lille.fr/">
+<img src="Logolycee.png" alt="Lycee" class="logo-lycee2" title="Lycée Professionnel Pierre-Joseph Fontaine"></a></div></div>
+
+
+
+        <!--BOUTON DIPLOME-->
+<div class="forme3" id="diplome-shape">
+<div class="carre5">
+<div class="text1">
+<p>Brevet</p></div></div>
+<div class="carre6">
+<div class="text9">
+<p>Diplôme Nationale des Brevet des Collège : Mention Assez-Bien :</p></div></div>
+<img src="Brevet.png" alt="Brevet" class="brevet-image" title="Mon Diplôme Nationale des Brevet des Collège : Mention Assez-Bien">
+
+<div class="carre7">
+<div class="text1">
+<p>BAC</p></div></div>
+<div class="carre8">
+<div class="text10">
+<p>Baccalauréat Professionnel Système Numérique :</p></div></div>
+<img src="Logocroiseblanc.png" alt="Croise" class="logo-croise" title="Je croise les doigths, priez pour moi, donnez moi du courrage s'il vous plait."></div></div>
+
+
+
+             <!--BOUTON STAGE-->
+<div class="forme4" id="stage-shape">
+<div class="carre9">
+<p>Seconde</p></div>
+<div class="carre10">
+<a href="https://lpo-du-pays-de-conde-conde-sur-lescaut.59.ac-lille.fr/">
+<img src="Logolyceeconde.png" alt="Lycée Condé" class="logo-lyceeconde" title="Lycee Polyvalant Du Pays De Condé"></a>
+<a href="https://www.condesurlescaut.fr/">
+<img src="Logoconde.png" alt="Conde" class="logo-conde2" title="Condé-Sur-L'Escaut"></a>
+<div class="text11">
+<p>Lycée Polyvalant Du Pays De Condé</p></div>
+<div class="text12">
+<a href="https://lyceehenriwallon-valenciennes.fr/">
+<img src="Logowallon.png" alt="Wallon" class="logo-wallon" title="Lycée Henrie Wallon"></a>
+<a href="https://www.valenciennes.fr/">
+<img src="Logovalenciennes.png" alt="valenciennes" class="logo-vallenc" title="valenciennes"></a>
+<p>Lycée Henrie Wallon</p></div></div>
+
+<div class="carre11">
+<p>Première</p></div>
+<div class="carre12">
+<div class="text13">
+<a href="https://lyceehenriwallon-valenciennes.fr/">
+<img src="Logowallon.png" alt="Wallon" class="logo-wallon2" title="Lycée Henrie Wallon"></a>
+<a href="https://www.valenciennes.fr/">
+<img src="Logovalenciennes.png" alt="valenciennes" class="logo-vallenc2" title="valenciennes"></a>
+<p>Lycée Henrie Wallon</p></div>
+<div class="text14">
+<a href="https://lyceewatteauvalenciennes.etab.ac-lille.fr/enseignement-secondaire/">
+<img src="Logowatteau.png" alt="Watteau" class="logo-watteau" title="Lycée Antoine Watteau"></a>
+<a href="https://www.valenciennes.fr/">
+<img src="Logovalenciennes.png" alt="valenciennes" class="logo-vallenc3" title="valenciennes"></a>
+<p>Lycée Antoine Watteau</p></div></div>
+<div class="carre13">
+<p>Terminal</p></div>
+<div class="carre14"></div>
+
+
+
+
+
+    
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>        
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
